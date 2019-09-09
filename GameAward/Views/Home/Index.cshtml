@@ -1,0 +1,1473 @@
+﻿@{
+    Layout = null;
+    List<GameAward.Models.GamingGoods> goods = ViewData["GamingGoods"] as List<GameAward.Models.GamingGoods>;
+    GameAward.Models.GamingUser user = ViewData["GamingUser"] as GameAward.Models.GamingUser;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+
+
+    <title>全网首家抽奖平台,木瓜江湖,新开热血江湖sf发布网-15.0热血江湖私服,最新热血江湖私服</title>
+    <meta name="keywords" content="热血江湖私服,热血江湖SF,RXJHSF,新开热血江湖私服,最新热血江湖私服发布网" />
+    <meta name="description" content="木瓜江湖,功能最全的热血江湖私服,高端水平设置完美PK,我们拥有热血江湖私服最佳的人气,强悍的技术团队,只为广大玩家提供公平公正的平台,全新15.0新版本，新玩法，新职业。还等什么，赶快加入木瓜吧!" />
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="/js/animatedborder.css" rel="stylesheet" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+    <script src="/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <style>
+        .xuanzhuan {
+            box-sizing: border-box;
+            border: 3px solid;
+            border-color: crimson;
+        }
+
+        #footer {
+            color: #767676;
+            height: 120px;
+        }
+
+            #footer .logo_company, #footer .other4, #footer .other5 {
+                background: url(/images/v1/footer_pic.png) no-repeat;
+            }
+
+            #footer a {
+                color: #767676;
+            }
+
+            #footer .wrapper {
+                margin-left: auto;
+                margin-right: auto;
+                width: 900px;
+            }
+
+            #footer .logo_company {
+                background-position: 0 8px;
+                border-right: 1px solid #c3c3c3;
+                height: 72px;
+                padding-right: 20px;
+                width: 204px;
+            }
+
+            #footer .copyright {
+                border-left: 1px solid #fff;
+                border-right: 1px solid #c3c3c3;
+                line-height: 18px;
+                padding-left: 16px;
+                width: 410px;
+            }
+
+            #footer .other {
+                border-left: 1px solid #fff;
+                height: 72px;
+            }
+
+            #footer .other4 {
+                background-position: 0 -181px;
+                height: 52px;
+                margin: 12px 10px 0 10px;
+                width: 150px;
+            }
+
+            #footer .other5 {
+                background-position: -6px -120px;
+                width: 54px;
+                height: 56px;
+                margin-top: 10px;
+            }
+
+            #footer .other4 a {
+                height: 52px;
+            }
+
+            #footer .other5 a {
+                height: 56px;
+            }
+
+        /*reset*/
+        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code,
+        form, fieldset, legend, input, textarea, p, blockquote, th, td {
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        fieldset, img {
+            border: 0;
+        }
+
+        img {
+            display: block;
+        }
+
+        div, a {
+            outline: none;
+        }
+
+        address, caption, cite, code, dfn, em, th, var {
+            font-style: normal;
+            font-weight: normal;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        caption, th {
+            text-align: left;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-size: 100%;
+            font-weight: normal;
+        }
+
+        h1, .hid {
+            display: block;
+            width: 100%;
+            height: 0;
+            font-size: 0;
+            text-indent: -9999em;
+            line-height: 500%;
+            overflow: hidden;
+        }
+
+        q:before, q:after {
+            content: '';
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        abbr, acronym {
+            border: 0;
+            font-variant: normal;
+        }
+
+        sup {
+            vertical-align: text-top;
+        }
+
+        sub {
+            vertical-align: text-bottom;
+        }
+
+        input, textarea, select {
+            font-family: inherit;
+            font-size: inherit;
+            font-weight: inherit;
+        }
+
+        input, textarea, select {
+            *font-size: 100%;
+        }
+
+        body {
+            min-width: 1000px;
+            _width: expression(( document.documentElement.clientWidth ||
+                 document.body.clientWidth)<1000?"1000px":"");
+            background: #f2f2f2;
+            font: 12px/1.5 '\5FAE\8F6F\96C5\9ED1', '\5b8b\4f53', sans-serif;
+        }
+
+        .none {
+            display: none;
+        }
+
+        .pr {
+            position: relative;
+        }
+
+        .pa {
+            position: absolute;
+        }
+
+        .db {
+            display: block;
+        }
+
+        .fl {
+            float: left;
+        }
+
+        .fr {
+            float: right;
+        }
+
+        .bc {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .txc {
+            text-align: center;
+        }
+
+        .txl {
+            text-align: left;
+        }
+
+        .txr {
+            text-align: right;
+        }
+
+        .ht {
+            text-indent: -9999em;
+            overflow: hidden;
+        }
+
+        .ovh {
+            overflow: hidden;
+        }
+
+        .clearfix:after {
+            visibility: hidden;
+            display: block;
+            font-size: 0;
+            content: " ";
+            clear: both;
+            height: 0;
+        }
+
+        * html .clearfix {
+            height: 0;
+            zoom: 1;
+        }
+        /* IE6 */
+        *:first-child + html .clearfix {
+            zoom: 1;
+        }
+        /* IE7 */
+        h2 {
+            height: 0;
+        }
+
+        .blacktop, .blacktop a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .blacktop, .blacktop_logo, .blacktop_btnavs .blacktop_bta {
+            background-image: url(/images/wuxia/picture/blacktop-spr.png);
+            background-repeat: no-repeat;
+        }
+
+        .blacktop {
+            position: relative;
+            height: 60px;
+            width: 100%;
+            overflow: hidden;
+            background-color: #000;
+            background-position: 0 0;
+            background-repeat: repeat-x;
+            z-index: 999;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, .3);
+        }
+
+        .blacktop_logo {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            width: 100px;
+            height: 35px;
+            margin: -15px 0 0;
+            background-position: 0 100%;
+            text-indent: -9999px;
+        }
+
+            .blacktop_logo a {
+                display: block;
+                height: 100%;
+                text-indent: -9999px;
+            }
+
+        .blacktop_topsilder {
+            float: right;
+        }
+
+            .blacktop_topsilder .logfrg {
+                float: right;
+            }
+
+            .blacktop_topsilder .logstate {
+                float: right;
+                line-height: 60px;
+            }
+
+                .blacktop_topsilder .logstate p span {
+                    color: #2fc3a3;
+                    margin-left: 5px;
+                    font-weight: bold;
+                }
+
+                .blacktop_topsilder .logstate p a, .blacktop_topsilder .logstate .areainfo em {
+                    margin: 0 5px;
+                }
+
+            .blacktop_topsilder .logined a:hover {
+                color: #fff;
+            }
+
+        .lists {
+            width: 750px;
+            height: 100px;
+            overflow: hidden;
+            margin: 0 auto;
+            padding: 10px 0;
+        }
+
+            .lists ul {
+                height: 400px;
+                overflow: hidden;
+            }
+
+                .lists ul li {
+                    float: left;
+                    width: 50%;
+                    font-size: 14px;
+                    color: #fff;
+                    line-height: 25px;
+                    text-align: center;
+                    padding-top: 10px;
+                }
+
+        .blacktop_topsilder .logstate .dologout {
+            color: #cfae69;
+        }
+
+        .blacktop_topsilder .logstate .bang:hover, .blacktop_topsilder .logstate .rebang:hover {
+            color: #2FC3A3;
+        }
+
+        .blacktop_btnavs {
+            width: 235px;
+            *width: 245px;
+            padding: 13px 10px 0;
+            height: 100%;
+            float: right;
+            overflow: hidden;
+            *display: inline;
+        }
+
+            .blacktop_btnavs .blacktop_btnav {
+                float: left;
+                border: 2px solid #2fc3a3;
+                padding: 0 15px;
+                margin: 0 0 0 10px;
+                border-radius: 15px;
+                line-height: 30px;
+            }
+
+            .blacktop_btnavs .blacktop_bta {
+                display: block;
+                padding: 0 0 0 20px;
+                font-size: 13px;
+            }
+
+            .blacktop_btnavs .blacktop_tohome {
+                background-position: -167px -75px;
+            }
+
+            .blacktop_btnavs .blacktop_toevent {
+                background-position: -167px -135px;
+            }
+
+            .blacktop_btnavs .blacktop_bta:hover {
+                color: #ececec;
+            }
+
+        .c_kj {
+            position: absolute;
+            left: -99999px;
+        }
+
+
+        /*主体内容*/
+        .wrap1, .wrap2, .wrap3, .wrap4 {
+            min-width: 1000px;
+            overflow: hidden;
+        }
+
+        .wrap1 {
+            background: url(/images/wuxia/cp/a20170418hyrry/dabg_1.jpg) no-repeat 50% 0;
+        }
+
+        .wrap2 {
+            background: url(/Images/draw2/dabg_2-1.jpg) no-repeat 50% 0;
+        }
+
+        .wrap3 {
+            background: url(/images/wuxia/cp/a20170418hyrry/dabg_3.jpg) no-repeat 50% 0;
+        }
+
+        .wrap4 {
+            background: url(/images/wuxia/cp/a20170418hyrry/dabg_4.jpg) no-repeat 50% 0;
+        }
+
+        .header, .main1, .main2, .main3 {
+            width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .header {
+            background: url(/Images/draw2/1_01.jpg) no-repeat;
+            height: 704px;
+        }
+
+        .main1 {
+            /*background:
+                url(/images/wuxia/cp/a20170418hyrry/bg_2.jpg)
+                no-repeat;*/
+            height: 1134px;
+        }
+
+        .main2 {
+            background: url(/images/wuxia/cp/a20170418hyrry/bg_3.jpg) no-repeat;
+            height: 1123px;
+        }
+
+        .main3 {
+            background: url(/images/wuxia/cp/a20170418hyrry/bg_4.jpg) no-repeat;
+            height: 1626px;
+        }
+
+        .sp {
+            background: url(/images/wuxia/cp/a20170418hyrry/sp.png) no-repeat;
+        }
+
+        .event1 {
+            padding: 20px;
+            height: 629px;
+        }
+
+
+        .img_div {
+            width: 105px;
+            float: left;
+        }
+
+        .btn_1 {
+            width: 198px;
+            height: 41px;
+            display: block;
+            background-position: 0 -92px;
+            margin-left: 99px;
+            font-size: 16px;
+            color: #ffffff;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        .event1_right {
+            width: 388px;
+            height: 554px;
+            float: left;
+        }
+
+            .event1_right .right_top {
+                height: 345px;
+            }
+
+            .event1_right .event1_con {
+                height: 200px;
+            }
+
+            .event1_right .event1_ul {
+                height: 200px;
+                width: 252px;
+            }
+
+                .event1_right .event1_ul li {
+                    width: 108px;
+                    height: 99px;
+                }
+
+                    .event1_right .event1_ul li img {
+                        width: 108px;
+                        height: 68px;
+                    }
+
+        .event1_btn {
+            height: 50px;
+            border-bottom: dashed 1px #9fa1a5;
+            padding-left: 4px;
+        }
+
+            .event1_btn a {
+                float: left;
+            }
+
+            .event1_btn .btn_2 {
+                margin-right: 38px;
+            }
+
+        .btn_2 {
+            width: 158px;
+            height: 41px;
+            display: block;
+            background-position: -233px -92px;
+            font-size: 16px;
+            color: #ffffff;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        .btn_3 {
+            width: 158px;
+            height: 41px;
+            display: block;
+            background-position: -428px -92px;
+            font-size: 16px;
+            color: #ffffff;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        .event1_ul1 {
+            padding-left: 4px;
+            height: 94px;
+        }
+
+            .event1_ul1 li {
+                width: 118px;
+                height: 94px;
+                float: left;
+                margin-right: 8px;
+            }
+
+                .event1_ul1 li img {
+                    width: 118px;
+                    height: 93px;
+                }
+
+        .event2 {
+            height: 470px;
+        }
+
+            .event2 .s1 {
+                font-size: 14px;
+                color: #fff;
+                line-height: 25px;
+                font-weight: bold;
+            }
+
+            .event2 .s2 {
+                font-size: 14px;
+                color: #fff;
+                line-height: 25px;
+                margin-bottom: 15px;
+            }
+
+        .event2_ul {
+            padding-top: 25px;
+            border-top: dashed 1px #2f2f5b;
+            width: 885px;
+            height: 158px;
+        }
+
+            .event2_ul li {
+                width: 102px;
+                height: 158px;
+                float: left;
+                margin-right: 20px;
+            }
+
+                .event2_ul li img {
+                    width: 102px;
+                    height: 102px;
+                    margin-bottom: 5px;
+                }
+
+                .event2_ul li p {
+                    font-size: 13px;
+                    color: #fdd66b;
+                    line-height: 20px;
+                    text-align: center;
+                }
+
+            .event2_ul .li_1 {
+                width: 131px;
+            }
+
+                .event2_ul .li_1 img {
+                    width: 131px;
+                }
+
+        .drawButton {
+            padding: 20px;
+            background-color: #5d66a7;
+            color: white;
+        }
+
+        .fl {
+            float: left;
+        }
+
+        .fr {
+            float: right;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+
+        .md50 {
+            margin-left: 50px;
+        }
+
+        .md55 {
+            margin-left: 55px;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+
+        .w200 {
+            /*width:200px;*/
+        }
+
+        .w900 {
+            width: 900px;
+        }
+
+        .w400 {
+            width: 400px;
+        }
+
+        .drawName {
+            height: 30px;
+            color: white;
+            font-size: 16px;
+            position: relative;
+            top: 30px;
+        }
+
+        .huojiang > span {
+            width: 400px;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .drawItems img {
+            display: block;
+            margin: 0 auto;
+            width: 50px;
+            margin-top: 10px;
+            border-radius: 30px;
+        }
+
+        .drawItem {
+            margin: 3px;
+            padding: 5px;
+            height: 115px;
+            width: 222px;
+            background: url(/Images/draw2/1_16.png) no-repeat 50% 0;
+            position: relative;
+        }
+
+        .hand {
+            cursor: pointer;
+        }
+
+        .event2 li {
+            margin-top: 20px;
+            padding: 5px;
+        }
+
+        .event5 {
+            padding: 96px 0 0 6px;
+            height: 721px;
+        }
+
+            .event5 .s1 {
+                font-size: 16px;
+                color: #646464;
+                line-height: 25px;
+                margin-bottom: 20px;
+                padding: 0 30px 0 76px;
+            }
+
+                .event5 .s1 span {
+                    font-weight: bold;
+                }
+
+                .event5 .s1 em {
+                    color: #ff7047;
+                }
+
+                .event5 .s1 a {
+                    float: right;
+                    color: #5661b5;
+                    text-decoration: underline;
+                }
+
+            .event5 .s2 {
+                border-bottom: dashed 1px #a7a7a7;
+                margin-bottom: 20px;
+            }
+
+        .event5_ul {
+            height: 90px;
+        }
+
+            .event5_ul li {
+                width: 310px;
+                height: 84px;
+                background: #5661b5;
+                float: left;
+                margin-right: 13px;
+            }
+
+                .event5_ul li p {
+                    padding: 20px 0 0 15px;
+                    width: 142px;
+                    font-size: 18px;
+                    color: #f7f6f6;
+                    line-height: 22px;
+                    float: left;
+                }
+
+                    .event5_ul li p span {
+                        font-weight: bold;
+                    }
+
+                .event5_ul li a {
+                    width: 130px;
+                    height: 50px;
+                    display: block;
+                    float: left;
+                    font-size: 16px;
+                    color: #ffffff;
+                    text-align: center;
+                    line-height: 50px;
+                    margin-top: 18px;
+                    background: #ff6a9e;
+                }
+
+
+        .sidebar {
+            position: fixed;
+            _position: absolute;
+            top: 220px;
+            _top: expression(documentElement.scrollTop +220);
+            left: 50%;
+            z-index: 997;
+            width: 160px;
+            margin-left: 510px;
+            background: #ff6ea1;
+        }
+
+            .sidebar p {
+                padding: 6px 0;
+                font-size: 14px;
+                color: #ffffff;
+                line-height: 20px;
+            }
+
+                .sidebar p strong {
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+
+            .sidebar a {
+                width: 100%;
+                height: 40px;
+                font-size: 18px;
+                color: #fff;
+                line-height: 40px;
+            }
+
+                .sidebar a.go-main {
+                    background: #ff4284;
+                }
+
+                    .sidebar a.go-main:hover {
+                        background: #ff6ea1;
+                    }
+
+                .sidebar a.go-more {
+                    background: #ff4284;
+                }
+
+                    .sidebar a.go-more:hover {
+                        background: #ff6ea1;
+                    }
+
+        .active .mask {
+            display: block;
+        }
+
+        .mask {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: rgba(175,238,238,0.5);
+            display: none;
+        }
+
+        .boxss {
+            /*width:180px;
+            height:123px;*/
+        }
+        /*.div{width: 478px;height:120px;background: #ccc;border:1px solid yellow;animation: shine 3s alternate infinite;}
+                keyframes shine{
+                    from{border-color: rgba(0,0,0,0);}
+                    to{border-color: rgba(0,0,0,8);}
+                }*/
+    </style>
+</head>
+<body>
+    <div class="blacktop">
+        <a class="blacktop_logo" href="http://www.kxg58.com" title="" target="_blank">官网</a>
+        <div class="blacktop_topsilder">
+            <ul class="blacktop_btnavs">
+                <li class="blacktop_btnav"><a class="blacktop_bta blacktop_tohome" href="http://www.arxjh.com:6/" target="_blank">返回官网</a></li>
+                <li class="blacktop_btnav"><a class="blacktop_bta blacktop_toevent" href="http://www.arxjh.com:6/reg.aspx" target="_blank">注册账号</a></li>
+            </ul>
+            <div class="logstate">
+
+            @if (user == null)
+            {
+                <p class="unlogin" id="unlogin" style="display: block;">
+                    您好，请先<a href="javascript:;" onclick="login()" id="dologin">【登录】</a>
+                </p>
+            }
+            </div>
+        </div>
+    </div>
+    <div class="layui-layer layui-layer-dialog layui-layer-border layui-layer-msg layui-layer-hui" hidden="hidden" id="layui-layer3" type="dialog" contype="string" style="z-index: 19891017; top: 75.5px; left: 644.5px;background-color:rgba(255,48,48,0.5);color:darkslategrey;">
+        <div id="CJMessage" class="layui-layer-content"></div>
+        <span class="layui-layer-setwin"></span>
+    </div>
+
+    <div class="wrap1">
+        <div class="header">
+            <object width="1506" height="801" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
+                <param value="/images/index_flower.swf" name="movie" />
+                <param value="high" name="quality" />
+                <param value="transparent" name="wmode" />
+                <embed width="1706" height="801" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high" wmode="transparent" src="/images/index_flower.swf">
+            </object>
+        </div>
+
+    </div>
+
+    <div class="wrap2">
+        <div class="main1">
+            <div class="event1" style="background-color:white">
+                <div class="">
+                    <div class="" style="width:100%; float:left">
+
+                        <span style="display:inline-flex">
+                            <img src="/Images/draw2/1_07.png" style="position: relative;top: -3px;" />
+                            @if (user != null)
+                            { <input type="hidden" id="userid" value="@user.Id" />}
+                            @if (user != null)
+                            {
+                                <span>
+                                    您好，@user.UserId
+                                    @if (string.IsNullOrEmpty(user.UserName))
+                                    {
+                                        <a href="javascript:void(0);" onclick="BindUserName()" id="">【绑定角色】</a>
+                                    }
+                                    else
+                                    {
+                                        <span>【@user.UserName】</span>
+                                        <a href="javascript:void(0);" onclick="BindUserName()" id="">【更换角色】</a>
+                                    }
+                                </span>
+                            }
+                            else
+                            {
+                                <span>   您好，请先<a href="javascript:void(0);" onclick="login()" id="">【登录】</a></span>
+                            }
+                        </span>
+                        @if (user != null)
+                        {
+                            <span style="float:right"><a href="javascript:void(0);" onclick="Exit()">【退出登录】</a></span>
+                        }
+                    </div>@*<div style="width:300px;float:right">
+                            <span style="display: inline-flex"><img src="/Images/draw2/1_03.png" style="position: relative;top: -3px;"><span>钻石：0</span></span>
+                            <span style="display:inline-flex; margin-left:20px;"><img src="/Images/draw2/1_05.png" style="position: relative;top: -3px;"><span>元宝：0</span></span>
+                        </div>*@<div class="clear"></div>
+                </div><div>
+
+                    <ul>
+                        <ul class="event5_ul">
+                            <li>
+                                <p>
+                                    独家活动福利<br> <span>《木瓜江湖》</span>
+                                </p> <a href="javascript:void(0);" title="点击单次抽奖" onclick="choujiang();" name="cjo">单次抽奖</a>
+                            </li>
+                            <li>
+                                <p>
+                                    连续十次<br> <span>抽奖</span>
+                                </p> <a href="javascript:void(0);" title="领取抽奖券" onclick="ChoujiangTen()" name="tencj">十连抽</a>
+                            </li>
+                            <li style="margin-right: 0;">
+                                <p>
+                                    分享到QQ空间<br> <span>增加中奖概率</span>
+                                </p> <a href="javascript:void(0);" title="获取抽奖次数" onclick="share('','','')">立即分享</a>
+                            </li>
+                        </ul>
+                    </ul>
+
+                </div>
+                <div class=" center drawItems " id="lottery">
+                    <div class="">
+
+                        <div class="fl drawItem lottery-unit lottery-unit-0" id="@goods[0].Id" name="good1">
+                            <div class=""><img src="@goods[0].Image" /></div>
+                            <div><p class="drawName">@goods[0].Name</p></div>
+                            <div class="mask"></div>
+                        </div>
+                        <div class="fl drawItem lottery-unit lottery-unit-1" id="@goods[1].Id" name="good2">
+                            <div class=""><img src="@goods[1].Image" /></div>
+                            <div><p class="drawName">@goods[1].Name</p></div>
+                            <div class="mask"></div>
+                        </div>
+                        <div class="fl drawItem lottery-unit lottery-unit-2" id="@goods[2].Id" name="good3">
+                            <div class=""><img src="@goods[2].Image" /></div>
+                            <div><p class="drawName">@goods[2].Name</p></div>
+                            <div class="mask"></div>
+                        </div>
+                        <div class="fl drawItem lottery-unit lottery-unit-3" id="@goods[3].Id" name="good4">
+                            <div class=""><img src="@goods[3].Image" /></div>
+                            <div><p class="drawName">@goods[3].Name</p></div>
+                            <div class="mask"></div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="clear"></div>
+                    <div class="">
+                        <div class=" fl drawItem lottery-unit lottery-unit-9" id="@goods[11].Id" name="good12">
+                            <div class=""><img src="@goods[11].Image" /></div>
+                            <div><p class="drawName">@goods[11].Name</p></div>
+
+                            <div class="mask"></div>
+                        </div>
+                        <div class="fl div cj1 hand" style="margin:5px; width:464px; height:120px; background:url(/Images/draw2/zhengchang.gif) no-repeat;background-size:100%" onclick="choujiang();">
+                            @*<div style="position:relative; top: 70px;font-size: 19px;color: #444fa4;font-weight: bold;"> 我的抽奖次数：0 次</div>*@
+
+                        </div>
+
+                        <div class="fl div cj2 hand" style="margin:5px; display:none; width:464px; height:120px; background:url(/Images/draw2/chufa.gif) no-repeat;background-size:100%" onclick="choujiang();" name="bigcjo">
+                            @*<div style="position:relative; top: 70px;font-size: 19px;color: #444fa4;font-weight: bold;"> 我的抽奖次数：0 次</div>*@
+
+                        </div>
+
+                        <div class=" fl drawItem lottery-unit lottery-unit-4" id="@goods[10].Id" name="good5">
+                            <div class=""><img src="@goods[10].Image" /></div>
+                            <div><p class="drawName">@goods[10].Name</p></div>
+
+                            <div class="mask"></div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="">
+
+                        <div class="fl drawItem lottery-unit lottery-unit-8" id="@goods[4].Id" name="good11">
+                            <div class=""><img src="@goods[4].Image" /></div>
+                            <div><p class="drawName">@goods[4].Name</p></div>
+                            <div class="mask"></div>
+                        </div>
+                        <div style="margin:5px;float:left;width:464px;height:120px;">
+
+                            @if (user != null)
+                            {
+                                <div style="position:relative; top: -20px;font-size: 19px;color: #444fa4;font-weight: bold;">
+                                    元宝数量:@ViewData["yuanbao"]
+                                </div>
+                                <div style="position:relative; top: -10px;font-size: 19px;color: #444fa4;font-weight: bold;">
+                                    金元宝数量：@ViewData["jinyuanbao"]
+                                </div>
+                                <div style="position:relative; top: 0px;font-size: 19px;color: #444fa4;font-weight: bold;">
+                                    我的抽奖次数：@user.Count 次
+                                </div>
+                                <div style="position:relative; top: 0px;font-size: 19px;color: #444fa4;font-weight: bold;">
+                                    <div style="margin:0px auto; background:#ff4284; width:300px;height:34px">
+                                        <a href="javascript:void(0);" style="font-size: 14px;color: #ffffff;text-align: center;" title="" onclick="GouMai();" name="cjo">使用金元宝购买次数</a>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="javascript:void(0);" style="font-size: 14px;color: #ffffff;text-align: center;" title="" onclick="GouMaiYuanBao();" name="cjo">使用元宝购买次数</a>
+                                    </div>
+                                </div>
+                            }
+                            else
+                            {
+                                <div style="position:relative; top: -20px;font-size: 19px;color: #444fa4;font-weight: bold;">
+                                    元宝数量：0
+                                </div>
+                                <div style="position:relative; top: -10px;font-size: 19px;color: #444fa4;font-weight: bold;">
+                                    金元宝数量：0
+                                </div>
+                                <div style="position:relative; top: 0px;font-size: 19px;color: #444fa4;font-weight: bold;">
+                                    我的抽奖次数：0 次
+                                </div>
+
+                            }
+
+
+                        </div>
+                        <div class="fl drawItem lottery-unit lottery-unit-5" id="@goods[9].Id" name="good6">
+                            <div class=""><img src="@goods[9].Image" /></div>
+                            <div><p class="drawName">@goods[9].Name</p></div>
+                            <div class="mask"></div>
+                        </div>
+
+
+
+
+
+                    </div>
+                    <div class="clear"></div>
+                    <div class="">
+
+                        <div class="fl drawItem lottery-unit lottery-unit-8" id="@goods[6].Id" name="good10">
+                            <div class=""><img src="@goods[6].Image" /></div>
+                            <div><p class="drawName">@goods[6].Name</p></div>
+                            <div class="mask"></div>
+                        </div>
+                        <div class="fl drawItem lottery-unit lottery-unit-7" id="@goods[8].Id" name="good9">
+                            <div class=""><img src="@goods[8].Image" /></div>
+                            <div><p class="drawName">@goods[8].Name</p></div>
+                            <div class="mask"></div>
+                        </div>
+                        <div class="fl drawItem lottery-unit lottery-unit-6" id="@goods[7].Id" name="good8">
+                            <div class=""><img src="@goods[7].Image" /></div>
+                            <div><p class="drawName">@goods[7].Name</p></div>
+                            <div class="mask"></div>
+                        </div>
+                        <div class="fl drawItem lottery-unit lottery-unit-5" id="@goods[5].Id" name="good7">
+                            <div class=""><img src="@goods[5].Image" /></div>
+                            <div><p class="drawName">@goods[5].Name</p></div>
+                            <div class="mask"></div>
+                        </div>
+
+
+
+
+
+                    </div>
+                    <div class="clear"></div>
+                </div>@*<div style="background-color:#ff6b9f">
+                        <div class="lists">
+
+                            <ul class="gundong">
+
+
+
+                                <li style="height:20px;" class="pricePersonPic">
+                                    <span>2017-9-5 18:43:55</span>
+                                    <span>陪你玩丶</span>
+                                    <span>获得了 5000元宝*1</span>
+                                </li>
+                                <li style="height:20px;" class="pricePersonPic">
+                                    <span>2017-9-5 18:43:55</span>
+                                    <span>陪你玩丶</span>
+                                    <span>获得了 铁锤*1</span>
+                                </li>
+                                <li style="height:20px;" class="pricePersonPic">
+                                    <span>2017-9-5 18:43:55</span>
+                                    <span>陪你玩丶</span>
+                                    <span>获得了 5000元宝*1</span>
+                                </li>
+                                <li style="height:20px;" class="pricePersonPic">
+                                    <span>2017-9-5 18:43:55</span>
+                                    <span>陪你玩丶</span>
+                                    <span>获得了 铁锤*1</span>
+                                </li>
+                                <li style="height:20px;" class="pricePersonPic">
+                                    <span>2017-9-5 18:43:55</span>
+                                    <span>陪你玩丶</span>
+                                    <span>获得了 5000元宝*1</span>
+                                </li>
+                                <li style="height:20px;" class="pricePersonPic">
+                                    <span>2017-9-5 18:43:55</span>
+                                    <span>陪你玩丶</span>
+                                    <span>获得了 5000元宝*1</span>
+                                </li>
+                                <li style="height:20px;" class="pricePersonPic">
+                                    <span>2017-9-5 18:43:55</span>
+                                    <span>陪你玩丶</span>
+                                    <span>获得了 铁锤*1</span>
+                                </li>
+                                <li style="height:20px;" class="pricePersonPic">
+                                    <span>2017-9-5 18:43:55</span>
+                                    <span>陪你玩丶</span>
+                                    <span>获得了 5000元宝*1</span>
+                                </li>
+                                <li style="height:20px;" class="pricePersonPic">
+                                    <span>2017-9-5 18:43:55</span>
+                                    <span>陪你玩丶</span>
+                                    <span>获得了 5000元宝*1</span>
+                                </li>
+                                <li style="height:20px;" class="pricePersonPic">
+                                    <span>2017-9-5 18:43:55</span>
+                                    <span>陪你玩丶</span>
+                                    <span>获得了 帮贡10点*1</span>
+                                </li>
+                                <li style="height:20px;" class="pricePersonPic">
+                                    <span>2017-9-5 18:43:53</span>
+                                    <span>陪你玩丶</span>
+                                    <span>获得了 铁锤*1</span>
+                                </li>
+                                <li style="height:20px;" class="pricePersonPic">
+                                    <span>2017-9-5 18:43:53</span>
+                                    <span>陪你玩丶</span>
+                                    <span>获得了 5000元宝*1</span>
+                                </li>
+                                <li style="height:20px;" class="pricePersonPic">
+                                    <span>2017-9-5 18:43:53</span>
+                                    <span>陪你玩丶</span>
+                                    <span>获得了 5000元宝*1</span>
+                                </li>
+                                <li style="height:20px;" class="pricePersonPic">
+                                    <span>2017-9-5 18:43:53</span>
+                                    <span>陪你玩丶</span>
+                                    <span>获得了 铁锤*1</span>
+                                </li>
+                                <li style="height:20px;" class="pricePersonPic">
+                                    <span>2017-9-5 18:43:53</span>
+                                    <span>陪你玩丶</span>
+                                    <span>获得了 5000元宝*1</span>
+                                </li>
+                                <li style="height:20px;" class="pricePersonPic">
+                                    <span>2017-9-5 18:43:53</span>
+                                    <span>陪你玩丶</span>
+                                    <span>获得了 5000元宝*1</span>
+                                </li>
+
+
+
+
+
+
+                            </ul>
+
+                        </div>
+
+
+
+                    </div>*@
+            </div>
+            <div class="event2" style="background-color:#5d66a7">
+
+                <div class="md50" style="padding:20px;position:relative; left:-50px">
+                    <p><img src="/Images/draw2/1_3.png" /></p>
+                    <ul class="clearfix" style="color:white;font-size:16px;margin-top:30px; border:3px solid #444fa4;width:956px">
+                        <li>
+                            1、第一期活动时间：11月1日-11月5日，奖励丰富，本期最高奖品“50VIP礼包”，每一期奖品都不一样。给您非一般的感觉！<br>
+                            （每日每个IP可“分享抽奖”可提高中奖几率）
+                        </li>
+                        <li>2、抽奖机会账号通用，需要人物不在线才可进行抽奖,抽取到的奖品自动到人物背包，请登录游戏查收奖品。</li>
+                        <li>3、每期抽奖活动期间，所有用户可直接用"金元宝"直接购买抽奖机会，最高奖励概率发放，先到先得，发完即止。</li>
+                        <li>4、抽奖次数直接登陆绑定人物角色，即可进行抽奖环节。</li>
+                        <li>
+                            5、由于不可抗拒因素、网络故障、作弊等非木瓜江湖原因导致活动异常，木瓜运营团队有权对本活动进行调整、暂停等操作。 本活动解释权规则归木瓜江湖所有。如有疑问，请咨询在线客服。木瓜江湖祝您游戏愉快！
+                        </li>
+                    </ul>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="/js/scroll.js"></script>
+<script src="/js/jquery.animatedborder.min.js"></script>
+<script src="/Scripts/layer/layer.js"></script>
+<script>
+
+    $(function () {
+        setInterval(function () {
+            $.ajax({
+                url: "/Home/GetOneRecord",
+                type: "post",
+                success: function (result) {
+                    $("#CJMessage").text(result.message);
+                    $("#layui-layer3").show();
+                    setTimeout(function () {
+                        $("#layui-layer3").hide();
+                        $("#CJMessage").text('');
+                    },2000);
+                }
+            });
+        },3500);
+    });
+
+    function BindUserName() {
+        layer.open({
+            type: 2,
+            title: false,
+            closeBtn: 0, //不显示关闭按钮
+            shade: [0],
+            area: ['340px', '150px'],
+            anim: 2,
+            content: ['/Home/Bind'], //iframe的url，no代表不显示滚动条
+        });
+    }
+    var flag = true;
+    var id="";
+    var msg = "";
+    function xz() {
+        var i = 1;
+        var base = setInterval(function () {
+            if (flag == false && id != "" && $("div.xuanzhuan").attr("id") == id) {
+                clearInterval(base);
+                layer.alert(msg, {
+                    skin: 'layui-layer-molv' //样式类名
+                    , closeBtn: 0
+                }, function () {
+                    location.reload();
+                });
+            } else {
+                $("div.drawItem").removeClass("xuanzhuan");
+                $("div[name='good" + i + "']").addClass("xuanzhuan");
+                i++;
+                if (i == 13) {
+                    i = 1;
+                }
+            }
+
+
+        }, 30);
+    }
+    var yichu = 0;
+
+
+    function choujiang() {
+
+        if (yichu == 0) {
+            yichu = 1;
+            var index;
+            if ($("#userid").val() == undefined) {
+                return login();
+            }
+            xz();
+            //xuanzhuan();
+            $.ajax({
+                url: "/Home/ChoujiangOneTimes",
+                type: "post",
+                datatype: "json",
+                data: {},
+                beforeSend: function () {
+                },
+                success: function (result) {
+                    yichu = 0;
+                    if (!result.success) {
+                        alert(result.message);
+                        location.reload();
+                    } else {
+                        id = result.itemid;
+                        flag = false;
+                        msg = "恭喜你抽取到【" + result.itemname + "】!";
+
+                         layer.alert(msg, {
+                            skin: 'layui-layer-molv' //样式类名
+                            , closeBtn: 0
+                        }, function () {
+                            location.reload();
+                        });
+
+                    }
+                }
+            });
+        } else {
+            alert("请不要重复点击！");
+        }
+
+    }
+
+    function ChoujiangTen() {
+        if (yichu==0) {
+            var load = layer.load(3);
+            if ($("#userid").val() == undefined) {
+                return login();
+            }
+            $.ajax({
+                url: "/Home/ChoujiangTenTimes",
+                type: "post",
+                datatype: "json",
+                data: {},
+                success: function (result) {
+                    layer.close(load);
+
+                    var resu = result;
+                    if (!resu.success) {
+                        alert(resu.message);
+                    } else {
+                        debugger
+                        var str = "恭喜您抽取到了:\n";
+                        for (var i = 0; i < 10; i++) {
+                            str += "【" + resu.list[i].Name + "】\n";
+                        }
+                        layer.alert(str, {
+                            skin: 'layui-layer-molv' //样式类名
+                            , closeBtn: 0
+                        }, function () {
+                            location.reload();
+                        });
+                    }
+                }
+            });
+        } else {
+            alert("请耐心等待数据返回");
+        }
+    }
+
+
+    function xuanzhuan() {
+        var list = $("div[name='good']").toArray();
+        var num = 200;
+        var index = 0;
+        setInterval(function () {
+            $("div[name='good']").removeClass("xuanzhuan");
+            $(list[index]).addClass("xuanzhuan");
+            index++;
+            if (index == 11) {
+                return;
+            }
+        }, num);
+    }
+
+    function login() {
+        layer.open({
+            type: 2,
+            title: '登录',
+            shadeClose: true,
+            shade: false,
+            maxmin: false, //开启最大化最小化按钮
+            area: ['500px', '200px'],
+            content: '/Home/LoginView'
+        });
+    }
+
+    function GouMai() {
+        layer.open({
+            type: 2,
+            title: '购买',
+            shadeClose: true,
+            shade: false,
+            maxmin: false, //开启最大化最小化按钮
+            area: ['500px', '200px'],
+            content: '/Home/GouMaiView'
+        });
+    }
+    function GouMaiYuanBao() {
+        layer.open({
+            type: 2,
+            title: '购买',
+            shadeClose: true,
+            shade: false,
+            maxmin: false, //开启最大化最小化按钮
+            area: ['500px', '200px'],
+            content: '/Home/GouMaiViewYuanBao'
+        });
+    }
+    function Exit() {
+        $.ajax({
+            url: "/Home/Exit",
+            type: "post",
+            datatype: "json",
+            data: {},
+            success: function (result) {
+                if (result == "true") {
+                    location.reload();
+                }
+            }
+        });
+    }
+
+    function share(title, url, picurl) {
+        var shareqqzonestring = 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?title=※木瓜江湖※抽奖福利中心,“顶V套装疯狂送”。邀请您的朋友一起来抽取奖励吧！&summary=※木瓜江湖※抽奖福利中心,我又抽到极品啦，木瓜江湖很不错，大家快来一起玩~我在江湖等着你一起闯荡!&url=http://cj.288jh.com:18&pics=http://cj.288jh.com:18/GoodsImage/1008000502.gif|http://cj.288jh.com:18/GoodsImage/909000014.gif|http://cj.288jh.com:18/GoodsImage/909000015.gif|http://cj.288jh.com:18/GoodsImage/900000674.gif|http://cj.288jh.com:18/GoodsImage/909000016.gif';
+        window.open(shareqqzonestring, 'newwindow', 'height=400,width=400,top=100,left=100');
+        //$.ajax({
+        //    type: "get",
+        //    url: "home/AddShare",
+        //    //data: "{'msg':'hello'}",
+        //    contentType: "application/json;charset=utf-8",// 这句可不要忘了。
+        //    dataType: "json",
+        //    beforeSend: function () {
+
+
+        //    },
+        //    success: function (res) {
+        //        console.log(res.result);
+        //        if (res.result == true) {
+        //            //  var shareqqzonestrin领取免费抽奖g = 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?summary=' + title + '&url=' + url + '&pics=' + picurl;
+
+
+        //            //  window.location.reload();
+        //        } else {
+        //            login();
+        //        }
+
+
+
+
+
+
+        //    },
+        //    error: function (xmlReq, err, c) {
+        //        // $("#dataShow").text("error:" + err);
+        //    }
+        //});
+    }
+
+</script>
+<script src="/js/footer.min.js"></script>
+<!--<iframe src="http://www.288jh.com:8/yyy.html" align=center frameborder=0 scrolling=no marginwidth="1" marginheight="1" name="公告3" width="650" height="76" ></iframe>-->
+</div><BODY oncontextmenu=self.event.returnValue =false onselectstart="return false">
+</BODY>
+<script language=javascript>
+
+    if (window.Event)
+        document.captureEvents(Event.MOUSEUP);
+    function nocontextmenu() {
+        event.cancelBubble = true
+        event.returnValue = false;
+        return false;
+    }
+    function norightclick(e) {
+        if (window.Event) {
+            if (e.which == 2 || e.which == 3)
+                return false;
+        }
+        else
+            if (event.button == 2 || event.button == 3) {
+                event.cancelBubble = true
+                event.returnValue = false;
+                return false;
+            }
+    }
+    document.oncontextmenu = nocontextmenu; // for IE5+
+    document.onmousedown = norightclick; // for all others
+
+</script>
+<script language="javascript">
+    function click() {
+        if (event.button == 2 || event.button == 3) { alert('欢迎访问天下科技旗下江湖网站，本页面版权所有（天下科技），盗版必究！') }
+    }
+    document.onmousedown = click
+</script>

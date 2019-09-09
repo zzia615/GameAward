@@ -1,0 +1,67 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<link href="~/Content/layui/css/layui.css" rel="stylesheet" />
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LoginView</title>
+</head>
+<body>
+    <form class="layui-form" action="">
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">数量</label>
+            <div class="layui-input-inline">
+                <input type="text" name="Count" id="Count" required lay-verify="number" placeholder="请输入要购买的次数" autocomplete="off" class="layui-input">
+                <div>
+                    <p><span style="color:red;">*&nbsp;</span>一次抽奖资格需要5000元宝</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <input type="button" class="layui-btn" onclick="GouMaiTo();" value="立即购买" />
+            </div>
+        </div>
+    </form>
+
+
+</body>
+
+
+</html>
+<script src="~/Content/js/jquery-1.8.3.min.js"></script>
+
+@*<script src="~/js/layer/layer.js"></script>*@
+<script>
+    function GouMaiTo() {
+        var count = $("#Count").val();
+        if (isNaN(count)) {
+            alert("请输入数字！");
+            return;
+        }
+        if (count <= 0) {
+            alert("请输入大于零的数字！");
+            return;
+        }
+        $.ajax({
+            url: "/Home/GouMaiByYuanBao",
+            type: "post",
+            datatype: "json",
+            data: { Count: count },
+            success: function (result) {
+                if (result.success) {
+                    parent.location.reload();
+                } else {
+                    alert(result.message);
+                }
+            }
+        });
+    }
+</script>
